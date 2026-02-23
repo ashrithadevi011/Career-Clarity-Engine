@@ -13,6 +13,7 @@ Google Fonts
 
 
 Output Preview:
+
 Slide1:
 <img width="1848" height="821" alt="Screenshot 2026-02-23 220853" src="https://github.com/user-attachments/assets/35ea3b7c-797c-4681-a34e-3110ca2bccbf" />
 Slide2:
@@ -36,8 +37,20 @@ Features:
 - Lists missing skills for each career  
 - Provides a month-wise roadmap based on available time  
 - Displays career risk score (higher = more risk)  
-- Clean, vertical dashboard UI with modern design  
+- Clean, vertical dashboard UI with modern design
 
+Use Case:
+
+Career Clarity Engine helps students identify the best career paths based on their current skills, interest level, and available time. It provides:
+Personalized career suggestions with match scores
+Highlights missing skills to focus on
+Generates a month-wise learning roadmap
+Shows a career risk score to guide realistic planning
+Outcome: Students get a structured, time-efficient plan to improve skills and prepare for their ideal career.
+
+
+
+Made by: Vagmare Ashritha Devi
 
 
 
