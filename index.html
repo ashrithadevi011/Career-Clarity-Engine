@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Clarity Engine - Vertical Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:linear-gradient(135deg,#0f172a,#1e293b);color:white;overflow-x:hidden;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;}
+nav h2{font-weight:700;}
+/* Removed Get Started button in navbar */
+.section{min-height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding:40px 20px;position:relative;}
+.hidden{display:none;}
+h1{font-size:2.5rem;margin-bottom:20px;}
+input{padding:12px;width:100%;border-radius:8px;border:none;margin-top:5px;transition:0.3s;}
+#onboarding input{width:300px;max-width:80%;text-align:center;}
+button.primary{background:#38bdf8;border:none;padding:12px 25px;border-radius:8px;font-weight:600;cursor:pointer;transition:0.3s;}
+button.primary:hover{transform:scale(1.05);background:#0ea5e9;}
+.container{max-width:900px;width:100%;background:rgba(255,255,255,0.05);padding:30px;border-radius:20px;backdrop-filter:blur(15px);margin-top:20px;text-align:left;}
+label{display:block;margin-top:20px;text-align:left;}
+.form-group{margin-bottom:20px;position:relative;}
+.submit-wrapper{margin-top:30px;text-align:center;}
+.submit-btn{width:60%;max-width:300px;padding:14px;font-size:16px;border-radius:10px;transition:0.3s;}
+.submit-btn:hover{transform:scale(1.05);}
+.card{width:100%;padding:20px;border-radius:12px;background:rgba(255,255,255,0.07);margin-bottom:20px;}
+.warning{color:#f87171;}
+.success{color:#4ade80;}
+footer{text-align:center;padding:20px;opacity:0.6;font-size:0.8rem;}
+.risk-bar{background:rgba(255,255,255,0.1);border-radius:8px;overflow:hidden;margin-top:10px;height:20px;}
+.risk-fill{background:#f87171;height:100%;width:0%;transition:width 1s ease;}
+.highlight{color:#4ade80;font-weight:600;}
+.skill-text, .roadmap-text, .missing-text{margin:5px 0;line-height:1.5;}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Career Clarity</h2>
+    <!-- Removed Get Started button -->
+</nav>
+
+<!-- INTRO -->
+<div class="section" id="intro">
+    <h1>Design Your Future Intelligently</h1>
+    <p style="opacity:0.7;margin-bottom:30px;">AI Powered Structured Career Intelligence Platform</p>
+    <button class="primary" onclick="startOnboarding()">Start Now</button>
+</div>
+
+<!-- ONBOARDING -->
+<div class="section hidden" id="onboarding">
+    <h1 id="question">What is your name?</h1>
+    <input type="text" id="username" placeholder="Enter your name">
+    <button class="primary" onclick="nextStep()">Continue</button>
+</div>
+
+<!-- MAIN APP -->
+<div class="section hidden" id="mainApp">
+    <h1 id="welcomeText"></h1>
+
+    <div class="container">
+        <form onsubmit="event.preventDefault(); analyze();">
+            <div class="form-group">
+                <label>Skills (comma separated)</label>
+                <input type="text" id="skills" placeholder="python, sql, java, flutter, full stack" required>
+            </div>
+
+            <div class="form-group">
+                <label>Interest Level (1-10)</label>
+                <input type="number" id="interest" min="1" max="10" required>
+            </div>
+
+            <div class="form-group">
+                <label>Time Available (months)</label>
+                <input type="number" id="time" required>
+            </div>
+
+            <div class="submit-wrapper">
+                <button type="submit" class="primary submit-btn">Analyze Career</button>
+            </div>
+        </form>
+
+        <div id="output"></div>
+    </div>
+</div>
+
+<footer>Built with structured logic • Vertical Dashboard Edition</footer>
+
+<script>
+let step=1;
+let userName="";
+
+function startOnboarding(){
+    document.getElementById("intro").classList.add("hidden");
+    document.getElementById("onboarding").classList.remove("hidden");
+
+    const storedName = localStorage.getItem("username");
+    if(storedName) document.getElementById("username").value = storedName;
+}
+
+function nextStep(){
+    if(step===1){
+        userName=document.getElementById("username").value.trim();
+        if(userName===""){alert("Please enter your name"); return;}
+        localStorage.setItem("username", userName);
+
+        document.getElementById("question").innerHTML=`Hi ${userName}, are you ready to take control of your career?`;
+        document.getElementById("username").style.display="none";
+        document.querySelector("#onboarding button").innerHTML="Yes, Let's Go 🚀";
+        step=2;
+    } else {
+        document.getElementById("onboarding").classList.add("hidden");
+        document.getElementById("mainApp").classList.remove("hidden");
+        document.getElementById("welcomeText").innerHTML=`Welcome ${userName}. Let's build your roadmap.`;
+
+        const storedSkills = localStorage.getItem("skills");
+        if(storedSkills) document.getElementById("skills").value = storedSkills;
+    }
+}
+
+/* Career Engine */
+const careers=[
+{name:"Data Analyst", skills:["python","sql","excel","statistics"], salary:"4 – 10 LPA (India)", requiredMonths:6, phases:["Excel & Statistics","SQL Mastery","Python for Data","Data Visualization","Build 3 Projects","Interview Preparation"]},
+{name:"Frontend Developer", skills:["html","css","javascript","react"], salary:"3 – 12 LPA (India)", requiredMonths:6, phases:["HTML & CSS","JavaScript","React","Build Portfolio Projects","Deploy Projects","Apply for Jobs"]},
+{name:"AI / ML Engineer", skills:["python","machine learning","statistics","deep learning","gen ai","prompt engineering"], salary:"6 – 18 LPA (India)", requiredMonths:8, phases:["Python Advanced","Statistics & Math","Machine Learning","Deep Learning","Projects","Model Deployment"]},
+{name:"Mobile Developer", skills:["java","kotlin","flutter","mobile","app"], salary:"3 – 10 LPA (India)", requiredMonths:6, phases:["Mobile Basics","Java/Kotlin/Flutter","UI/UX Design","Build Apps","Deploy Apps","Portfolio Projects"]},
+{name:"App Developer", skills:["flutter","dart","mobile","app"], salary:"3 – 8 LPA (India)", requiredMonths:5, phases:["Flutter Basics","Dart Programming","UI/UX Design","Build Apps","Deploy Apps","Portfolio Projects"]},
+{name:"Java Developer", skills:["java","spring","hibernate","mysql"], salary:"4 – 12 LPA (India)", requiredMonths:6, phases:["Java Basics","Spring Framework","Database (MySQL)","Build Projects","Deploy & Portfolio","Interview Prep"]},
+{name:"Python Developer", skills:["python","django","flask","sql"], salary:"4 – 12 LPA (India)", requiredMonths:6, phases:["Python Basics","Django/Flask","Database (SQL)","Projects","Deploy & Portfolio","Interview Prep"]},
+{name:"SQL Developer", skills:["sql","mysql","postgresql","database"], salary:"4 – 10 LPA (India)", requiredMonths:5, phases:["SQL Basics","Advanced Queries","Database Management","Projects","Optimization Techniques","Interview Prep"]},
+{name:"Backend Developer", skills:["nodejs","express","mongodb","api"], salary:"5 – 15 LPA (India)", requiredMonths:6, phases:["Node.js & Express","Database (MongoDB)","API Development","Build Backend Projects","Deploy & Portfolio","Interview Prep"]}
+];
+
+function analyze(){
+    let userSkills=document.getElementById("skills").value.toLowerCase().split(",").map(s=>s.trim());
+    localStorage.setItem("skills", userSkills.join(", "));
+    const interest=parseInt(document.getElementById("interest").value);
+    const months=parseInt(document.getElementById("time").value);
+
+    let results=[];
+
+    careers.forEach(career=>{
+        let careerMatch = 0;
+        if(userSkills.includes(career.name.toLowerCase())) careerMatch=100;
+
+        let match = career.skills.filter(skill=>userSkills.includes(skill)).length;
+        let score = (match/career.skills.length)*100;
+        if(careerMatch>0) score=careerMatch;
+
+        results.push({career:career, score:score, missing:career.skills.filter(skill=>!userSkills.includes(skill))});
+    });
+
+    results.sort((a,b)=>b.score-a.score);
+    display(results, interest, months);
+}
+
+function display(topCareers, interest, months){
+    const output=document.getElementById("output");
+    output.innerHTML="";
+
+    topCareers.forEach((item,index)=>{
+        const career=item.career;
+        const score=Math.round(item.score);
+
+        let card=document.createElement("div");
+        card.className="card";
+        card.innerHTML=`
+        <h3>#${index+1} ${career.name}</h3>
+        <p><strong>Match Score:</strong> <span class="${score>50?'highlight':''}">${score}%</span></p>
+        <p><strong>Salary:</strong> ${career.salary}</p>
+        ${months<career.requiredMonths?`<p class="warning">⚠ Aggressive timeline. Minimum recommended: ${career.requiredMonths} months.</p>`:""}
+        ${item.missing.length>0?`<p class="missing-text"><strong>Missing Skills:</strong> ${item.missing.join(", ")}</p>`:""}
+        <p class="roadmap-text"><strong>${months}-Month Roadmap:</strong><br>${[...Array(months)].map((_,m)=>`${m+1}. ${career.phases[Math.min(m,career.phases.length-1)]}`).join("<br>")}</p>
+        `;
+        output.appendChild(card);
+    });
+
+    let avgScore=topCareers.reduce((sum,c)=>sum+c.score,0)/topCareers.length;
+    let risk=Math.max(0,100-avgScore-(interest*5)-Math.min(months,8)*5);
+    risk=Math.round(risk);
+
+    let riskCard=document.createElement("div");
+    riskCard.className="card";
+    riskCard.innerHTML=`
+    <h3>Career Risk Score</h3>
+    <div class="risk-bar"><div class="risk-fill" style="width:${risk}%"></div></div>
+    <p>${risk}% (Higher = More Risk)</p>
+    `;
+    output.appendChild(riskCard);
+}
+</script>
+</body>
+</html>
