@@ -14,13 +14,11 @@ Google Fonts
 
 Output Preview:
 
----Slide1.png
-
-Intro page with Start Now button 
+---Slide1.png:
+ Intro page with Start Now button 
 <img width="1848" height="821" alt="Screenshot 2026-02-23 220853" src="https://github.com/user-attachments/assets/35ea3b7c-797c-4681-a34e-3110ca2bccbf" />
----Slide2.png
-
-Onboarding page asking for name  
+---Slide2.png:
+ Onboarding page asking for name  
 <img width="1830" height="822" alt="Screenshot 2026-02-23 220908" src="https://github.com/user-attachments/assets/d775dd9b-c2b5-4f95-b3ea-6dd73a762f67" />
 ---Slide3.png
 <img width="1812" height="820" alt="Screenshot 2026-02-23 220921" src="https://github.com/user-attachments/assets/80416131-ec0c-49e7-8f7b-44eb13481dd4" />
@@ -28,9 +26,8 @@ Onboarding page asking for name
 <img width="1750" height="893" alt="Screenshot 2026-02-23 220947" src="https://github.com/user-attachments/assets/14172e5c-a1a2-4799-a607-20adfe16e02e" />
 ---Slide5.png
 <img width="1769" height="755" alt="Screenshot 2026-02-23 221012" src="https://github.com/user-attachments/assets/ae638704-4996-45f6-8242-5658259a9ce3" />
----Slide6.png
-
-Main career dashboard with results  
+---Slide6.png:
+ Main career dashboard with results  
 <img width="1458" height="771" alt="Screenshot 2026-02-23 221031" src="https://github.com/user-attachments/assets/df529948-ead3-48e7-a320-c86817631c07" />
 ---Slide7.png
 <img width="1596" height="742" alt="Screenshot 2026-02-23 221053" src="https://github.com/user-attachments/assets/9c1a0ed6-d3c1-4e49-8204-aa78d92555d6" />
