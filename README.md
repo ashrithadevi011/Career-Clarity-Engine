@@ -15,9 +15,12 @@ Google Fonts
 Output Preview:
 
 Slide.png
+
 Intro page with Start Now button 
 <img width="1848" height="821" alt="Screenshot 2026-02-23 220853" src="https://github.com/user-attachments/assets/35ea3b7c-797c-4681-a34e-3110ca2bccbf" />
 Slide2.png
+
+Onboarding page asking for name  
 <img width="1830" height="822" alt="Screenshot 2026-02-23 220908" src="https://github.com/user-attachments/assets/d775dd9b-c2b5-4f95-b3ea-6dd73a762f67" />
 Slide3.png
 <img width="1812" height="820" alt="Screenshot 2026-02-23 220921" src="https://github.com/user-attachments/assets/80416131-ec0c-49e7-8f7b-44eb13481dd4" />
