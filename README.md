@@ -1,10 +1,11 @@
 # Career-Clarity-Engine
 Career Clarity Engine - AI Career Roadmap Dashboard
+
 Description:
 
 AI-powered web dashboard that helps users analyze their skills, interests, and time availability to generate personalized career roadmaps.
 
-Features
+Features:
 
 Onboarding process with personalized greeting
 
@@ -18,7 +19,7 @@ Risk analysis of the chosen career path
 
 Clean, vertical dashboard UI
 
-Technologies Used
+Technologies Used:
 
 HTML5, CSS3, JavaScript
 
@@ -26,7 +27,7 @@ LocalStorage API
 
 Google Fonts
 
-How to Use
+How to Use:
 
 Open index.html in a browser
 
