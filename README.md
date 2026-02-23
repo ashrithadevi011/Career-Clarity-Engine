@@ -1,5 +1,6 @@
 # Career-Clarity-Engine
-Live Demo: (https://career-clarity-engine.vercel.app/)
+Live Demo: https://career-clarity-engine.vercel.app/
+
 Career Clarity Engine - AI Career Roadmap Dashboard
 
 AI-powered web dashboard that helps users analyze their skills, interests, and time availability to generate personalized career roadmaps.
